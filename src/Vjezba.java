@@ -15,6 +15,7 @@ public class Vjezba {
         System.out.println("---");
         patern7(4);
         System.out.println("---");
+        patern7b(4);
 
 
 
@@ -239,6 +240,31 @@ public class Vjezba {
                 for(int j = i-n+1; j<=n; j++){
                     System.out.print(j+" ");
                 }
+            }
+            System.out.println();
+        }
+    }
+
+    static void patern7b(int n){
+        /*
+        7.Zadatak: Za n = 4:  ---> Drugi nacin
+         4 4 4 4 4 4 4
+         4 3 3 3 3 3 4
+         4 3 2 2 2 3 4
+         4 3 2 1 2 3 4
+         4 3 2 2 2 3 4
+         4 3 3 3 3 3 4
+         4 4 4 4 4 4 4
+
+         */
+        int brojRedova = 2*n-1;
+        int brojKolona = 2*n-1;
+
+        for(int red = 1; red<=brojRedova; red++){
+            int min;
+            for(int kolona = 1; kolona<=brojKolona; kolona++){
+                min=Math.min(Math.min(kolona-1,brojKolona-kolona),Math.min(red-1,brojRedova-red));
+                System.out.print(n-min+" ");
             }
             System.out.println();
         }
