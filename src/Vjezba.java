@@ -11,6 +11,7 @@ public class Vjezba {
         System.out.println("---");
         patern5(5);
         System.out.println("---");
+        patern6(5);
     }
 
     static void patern1(int n){
@@ -155,6 +156,32 @@ public class Vjezba {
                 for(int kolonaZvjezdica = 1; kolonaZvjezdica<=n*2-red; kolonaZvjezdica++){
                     System.out.print("* ");
                 }
+            }
+            System.out.println();
+        }
+    }
+
+    static void patern6(int n){
+        /*
+        6.Zadatak: Za n = 5:
+
+            1
+          2 1 2
+        3 2 1 2 3
+      4 3 2 1 2 3 4
+    5 4 3 2 1 2 3 4 5
+
+         */
+
+        for(int i = 1; i<=n; i++){
+            for(int j = 1; j<=n-i; j++){
+                System.out.print("  ");
+            }
+            for(int k = i; k>=1; k--){
+                System.out.print(k+" ");
+            }
+            for(int l = 2; l<=i; l++){
+                System.out.print(l+" ");
             }
             System.out.println();
         }
