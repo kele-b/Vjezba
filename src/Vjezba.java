@@ -263,11 +263,23 @@ public class Vjezba {
         for(int red = 1; red<=brojRedova; red++){
             int min;
             for(int kolona = 1; kolona<=brojKolona; kolona++){
-                min=Math.min(Math.min(kolona-1,brojKolona-kolona),Math.min(red-1,brojRedova-red));
+                //min=Math.min(Math.min(kolona-1,brojKolona-kolona),Math.min(red-1,brojRedova-red));
+                min = min(kolona-1,brojKolona-kolona,red-1,brojRedova-red);
                 System.out.print(n-min+" ");
             }
             System.out.println();
         }
+
+
+    }
+    static int min(int a, int b, int c, int d){
+        int minBroj=a;
+        int[] minBrojevi = {a,b,c,d};
+        for(int i : minBrojevi){
+           if(minBroj>i)
+               minBroj=i;
+        }
+        return minBroj;
     }
 
 
