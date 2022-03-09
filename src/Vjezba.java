@@ -1,7 +1,7 @@
 public class Vjezba {
 
     public static void main(String[] args) {
-        patern1(5);
+       patern1(5);
         System.out.println("---");
         patern2(5);
         System.out.println("---");
@@ -12,6 +12,12 @@ public class Vjezba {
         patern5(5);
         System.out.println("---");
         patern6(5);
+        System.out.println("---");
+        patern7(4);
+        System.out.println("---");
+
+
+
     }
 
     static void patern1(int n){
@@ -186,4 +192,57 @@ public class Vjezba {
             System.out.println();
         }
     }
+
+    static void patern7(int n){
+         /*
+        7.Zadatak: Za n = 4:
+         4 4 4 4 4 4 4
+         4 3 3 3 3 3 4
+         4 3 2 2 2 3 4
+         4 3 2 1 2 3 4
+         4 3 2 2 2 3 4
+         4 3 3 3 3 3 4
+         4 4 4 4 4 4 4
+
+         */
+        int brojRedova = n*2-1;
+        for(int i = 1; i<=brojRedova; i++){
+            //Ispis za prve redove dok je broj reda manji od n
+            if(i<n) {
+                for (int j = n; j >= n - i + 1; j--) {
+                    System.out.print(j + " ");
+                }
+                for(int j = 1; j<=brojRedova-(2*i); j++){
+                    System.out.print(n-i+1+" ");
+                }
+                for(int j = n-i+1; j<=n; j++){
+                    System.out.print(j+" ");
+                }
+            }
+            //Ispis srednjeg reda, tj. kada je broj reda = n
+            else if(i==n){
+                for (int j = n; j >= n - i + 1; j--) {
+                    System.out.print(j + " ");
+                }
+                for(int j = 2; j<=n; j++) {
+                    System.out.print(j + " ");
+                }
+            }
+            //Ispis svih ostalih redova do brojaRedova, brojRedova=2*n-1
+            else{
+                for(int j=n; j>i-n; j--){
+                    System.out.print(j+" ");
+                }
+                for(int j = 1; j<=2*i-(2*n+1); j++){
+                    System.out.print(i-n+1+" ");
+                }
+                for(int j = i-n+1; j<=n; j++){
+                    System.out.print(j+" ");
+                }
+            }
+            System.out.println();
+        }
+    }
+
+
 }
