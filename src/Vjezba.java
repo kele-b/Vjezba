@@ -9,6 +9,8 @@ public class Vjezba {
         System.out.println("---");
         patern4(5);
         System.out.println("---");
+        patern5(5);
+        System.out.println("---");
     }
 
     static void patern1(int n){
@@ -86,7 +88,7 @@ public class Vjezba {
 
     static void patern4(int n){
         /*
-        3.Zadatak: Za n = 5:
+        4.Zadatak: Za n = 5:
 
          *
          **
@@ -114,6 +116,44 @@ public class Vjezba {
             else {
                 for (int kolona = 1; kolona<=n*2-brojZvjzdica; kolona++){
                     System.out.print("*");
+                }
+            }
+            System.out.println();
+        }
+    }
+
+    static void patern5(int n){
+         /*
+        5.Zadatak: Za n = 5:
+
+         *
+        * *
+       * * *
+      * * * *
+     * * * * *
+      * * * *
+       * * *
+        * *
+         *
+
+         */
+
+        for(int red = 1; red<n*2; red++){
+            if(red<=n) {
+                for (int kolonaPraznihMjesta = 1; kolonaPraznihMjesta <= n - red; kolonaPraznihMjesta++) {
+                    System.out.print(" ");
+                }
+                for (int kolonaZvjezdica = 1; kolonaZvjezdica <= red; kolonaZvjezdica++) {
+                    System.out.print("* ");
+                }
+
+            }
+            else{
+                for(int kolonaPraznihMjesta = n; kolonaPraznihMjesta>n*2-red; kolonaPraznihMjesta--){
+                    System.out.print(" ");
+                }
+                for(int kolonaZvjezdica = 1; kolonaZvjezdica<=n*2-red; kolonaZvjezdica++){
+                    System.out.print("* ");
                 }
             }
             System.out.println();
